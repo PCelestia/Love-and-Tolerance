@@ -21,7 +21,7 @@ jobs:
     - name: package resource pack
       uses: montudor/action-zip@v0.1.0
       with:
-        args: zip Love-and-Tolerance-prerelease.zip assets LICENSE pack.mcmeta pack.png
+        args: zip Love-and-Tolerance-${{ env.RELEASE_VERSION }}.zip assets LICENSE pack.mcmeta pack.png
 
     - name: create draft release
       uses: ncipollo/release-action@v1
