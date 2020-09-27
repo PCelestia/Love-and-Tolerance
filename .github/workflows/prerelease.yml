@@ -26,9 +26,10 @@ jobs:
     - name: create draft release
       uses: ncipollo/release-action@v1
       with:
-        artifacts: Love-and-Tolerance-prerelease.zip
+        artifacts: Love-and-Tolerance-${{ env.RELEASE_VERSION }}.zip
         body: |
-          [Download here](https://github.com/Love-and-Tolerance/Love-and-Tolerance/releases/latest/download/Love-and-Tolerance.zip)
+          [Download here](https://github.com/Love-and-Tolerance/Love-and-Tolerance/releases/${{ env.RELEASE_VERSION }}/download/Love-and-Tolerance-${{ env.RELEASE_VERSION }}.zip)
+          [Download latest release](https://github.com/Love-and-Tolerance/Love-and-Tolerance/releases/latest/download/Love-and-Tolerance.zip)
 
           TODO add changelog and stuff
           TODO add minecraft version to the name of the release
