@@ -4,27 +4,28 @@ on:
     tags:
     - "v*"
 
+name: release
+
 jobs:
   draft-release:
     name: draft a release
     runs-on: ubuntu-20.04
     steps:
-    - name: checkout repository
-      uses: actions/checkout@v2
+    # - name: checkout repository
+    #   uses: actions/checkout@v2
 
-    - name: package resource pack
-      uses: montudor/action-zip@v0.1.0
-      with:
-        args: zip Love-and-Tolerance.zip assets LICENSE pack.mcmeta pack.png
+    # - name: package resource pack
+    #   uses: montudor/action-zip@v0.1.0
+    #   with:
+    #     args: zip Love-and-Tolerance.zip assets LICENSE pack.mcmeta pack.png
 
-    - name: create draft release
-      uses: ncipollo/release-action@v1
-      with:
-        artifacts: Love-and-Tolerance.zip
-        body: TODO add changelog and stuff
-        draft: true
-        name: Love and tolerance ${{ env.RELEASE_VERSION }}
-        token: ${{ secrets.GITHUB_TOKEN }}
-
-    # - name: upload resource pack as release asset
-    #   uses:
+    # - name: create draft release
+    #   uses: ncipollo/release-action@v1
+    #   with:
+    #     artifacts: Love-and-Tolerance.zip
+    #     body: TODO add changelog and stuff
+    #     draft: true
+    #     name: Love and tolerance ${{ env.RELEASE_VERSION }}
+    #     token: ${{ secrets.GITHUB_TOKEN }}
+    - name: say hi
+      run: echo hiiiiiii

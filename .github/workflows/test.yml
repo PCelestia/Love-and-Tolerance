@@ -1,0 +1,23 @@
+---
+on:
+  push:
+    tags:
+    - "v*"
+
+name: test workflow thing
+
+jobs:
+  test-thing:
+    name: test thing
+    runs-on: ubuntu-20.04
+    steps:
+    - name: checkout repository
+      uses: actions/checkout@v2
+
+    - name: attempt to set env
+      run: echo ::set-env name=RELEASE_VERSION::${GITHUB_REF#refs/*/}
+
+    - name: test env
+      run: |
+        echo #RELEASE_version
+        echo ${{ env.RELEASE_VERSION }}
