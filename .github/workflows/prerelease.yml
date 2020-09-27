@@ -26,7 +26,7 @@ jobs:
     - name: create draft release
       uses: ncipollo/release-action@v1
       with:
-        artifacts: Love-and-Tolerance.zip
+        artifacts: Love-and-Tolerance-prerelease.zip
         body: |
           [Download here](https://github.com/Love-and-Tolerance/Love-and-Tolerance/releases/latest/download/Love-and-Tolerance.zip)
 
