@@ -8,7 +8,7 @@ name: release
 
 jobs:
   draft-release:
-    name: draft a release
+    name: draft-release
     runs-on: ubuntu-20.04
 
     steps:
@@ -28,7 +28,7 @@ jobs:
       with:
         artifacts: Love-and-Tolerance.zip
         body: |
-          [Download here](https://github.com/Love-and-Tolerance/Love-and-Tolerance/releases/latest/download/Love-and-Tolerance.zip)
+          [Download latest release](https://github.com/Love-and-Tolerance/Love-and-Tolerance/releases/latest/download/Love-and-Tolerance.zip)
 
           TODO add changelog and stuff
           TODO add minecraft version to the name of the release
