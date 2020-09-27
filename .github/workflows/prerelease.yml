@@ -28,7 +28,7 @@ jobs:
       with:
         artifacts: Love-and-Tolerance-${{ env.RELEASE_VERSION }}.zip
         body: |
-          [Download here](https://github.com/Love-and-Tolerance/Love-and-Tolerance/releases/${{ env.RELEASE_VERSION }}/download/Love-and-Tolerance-${{ env.RELEASE_VERSION }}.zip)
+          [Download here](https://github.com/Love-and-Tolerance/Love-and-Tolerance/releases/download/${{ env.RELEASE_VERSION }}/Love-and-Tolerance-${{ env.RELEASE_VERSION }}.zip)
           [Download latest release](https://github.com/Love-and-Tolerance/Love-and-Tolerance/releases/latest/download/Love-and-Tolerance.zip)
 
           TODO add changelog and stuff
