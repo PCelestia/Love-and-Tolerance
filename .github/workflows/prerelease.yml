@@ -1,0 +1,39 @@
+---
+on:
+  push:
+    tags:
+    - "wip-*"
+
+name: prerelease
+
+jobs:
+  draft-release:
+    name: draft a prerelease
+    runs-on: ubuntu-20.04
+
+    steps:
+    - name: setup env
+      run: echo ::set-env name=RELEASE_VERSION::${GITHUB_REF#refs/*/}
+
+    - name: checkout repository
+      uses: actions/checkout@v2
+
+    - name: package resource pack
+      uses: montudor/action-zip@v0.1.0
+      with:
+        args: zip Love-and-Tolerance-prerelease.zip assets LICENSE pack.mcmeta pack.png
+
+    - name: create draft release
+      uses: ncipollo/release-action@v1
+      with:
+        artifacts: Love-and-Tolerance.zip
+        body: |
+          [Download here](https://github.com/Love-and-Tolerance/Love-and-Tolerance/releases/latest/download/Love-and-Tolerance.zip)
+
+          TODO add changelog and stuff
+          TODO add minecraft version to the name of the release
+          TODO remove these todo messages and things lol
+        draft: true
+        prerelease: true
+        name: Love and tolerance ${{ env.RELEASE_VERSION }}
+        token: ${{ secrets.GITHUB_TOKEN }}
