@@ -1,0 +1,27 @@
+---
+on:
+  push:
+    branches:
+      - "**"
+
+name: prerelease
+
+jobs:
+  build:
+    name: build
+    runs-on: ubuntu-20.04
+
+    steps:
+    - name: checkout repository
+      uses: actions/checkout@v2
+
+    - name: package resource pack
+      uses: montudor/action-zip@v0.1.0
+      with:
+        args: zip Love-and-Tolerance.zip assets LICENSE pack.mcmeta pack.png
+
+    - name: upload artifact
+      uses: actions/upload-artifact@v2
+      with:
+        name: Love-and-Tolerance.zip
+        path: Love-and-Tolerance.zip
